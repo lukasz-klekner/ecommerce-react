@@ -1,9 +1,9 @@
+import { Layout } from "./components/Layout/Layout"
+
 function App() {
 
   return (
-    <p>
-      Hello world!
-    </p>
+    <Layout />
   )
 }
 
