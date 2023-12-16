@@ -3,13 +3,18 @@ import { Footer } from "../Footer/Footer";
 import { IconMenu } from "../IconMenu/IconMenu";
 import { Logo } from "../Logo/Logo";
 import { MainMenu } from "../MainMenu/MainMenu";
+import { TopBar } from "../TopBar/TopBar";
 
 export const Layout = () => (
     <>
-        <MainMenu />
-        <Logo />
-        <CurrencySelector />
-        <IconMenu />
+        <TopBar>
+            <MainMenu />
+            <Logo />
+            <div>
+                <CurrencySelector />
+                <IconMenu />
+            </div>
+        </TopBar>
         <Footer/>
     </>
 )
