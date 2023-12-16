@@ -1,3 +1,4 @@
+import { CategoryMenu } from "../CategoryMenu/CategoryMenu";
 import { CurrencySelector } from "../CurrencySelector/CurrencySelector";
 import { Footer } from "../Footer/Footer";
 import { IconMenu } from "../IconMenu/IconMenu";
@@ -15,6 +16,7 @@ export const Layout = () => (
                 <IconMenu />
             </div>
         </TopBar>
+        <CategoryMenu />
         <Footer/>
     </>
 )
