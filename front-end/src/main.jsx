@@ -6,12 +6,17 @@ import "./styles/theme.css"
 import "./styles/global.css"
 
 import { MainPage } from './pages/MainPage/MainPage'
+import { Favourites } from './pages/Favourites/Favourites'
 
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <MainPage />
+  },
+  {
+    path: '/ulubione',
+    element: <Favourites />
   }
 ])
 
