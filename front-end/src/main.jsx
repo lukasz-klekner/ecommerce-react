@@ -5,13 +5,13 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import "./styles/theme.css"
 import "./styles/global.css"
 
-import App from './App.jsx'
+import { MainPage } from './pages/MainPage/MainPage'
 
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />
+    element: <MainPage />
   }
 ])
 
