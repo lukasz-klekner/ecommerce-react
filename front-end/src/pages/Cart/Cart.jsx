@@ -1,4 +1,6 @@
 import { CartProductsList } from "../../components/CartProductsList/CartProductsList";
+import { CartSummary } from "../../components/CartSummary/CartSummary";
+import { FlexContainer } from "../../components/FlexContainer/FlexContainer";
 import { Layout } from "../../components/Layout/Layout";
 
 const CART_PRODUCTS = [
@@ -40,6 +42,9 @@ const CART_PRODUCTS = [
 
 export const Cart = () => (
     <Layout>
-        <CartProductsList products={CART_PRODUCTS}/>
+        <FlexContainer>
+            <CartProductsList products={CART_PRODUCTS}/>
+            <CartSummary products={CART_PRODUCTS}/>
+        </FlexContainer>
     </Layout>
 )
