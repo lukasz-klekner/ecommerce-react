@@ -7,6 +7,7 @@ import "./styles/global.css"
 
 import { MainPage } from './pages/MainPage/MainPage'
 import { Favourites } from './pages/Favourites/Favourites'
+import { Cart } from './pages/Cart/Cart'
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: '/ulubione',
     element: <Favourites />
+  },
+  {
+    path: '/koszyk',
+    element: <Cart />
   }
 ])
 
