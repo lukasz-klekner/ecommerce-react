@@ -3,6 +3,7 @@ import { Breadcrumbs } from "../../components/Breadcrumbs/Breadcrumbs";
 import { ExpandableMenu } from "../../components/ExpandableMenu/ExpandableMenu";
 import { FlexContainer } from "../../components/FlexContainer/FlexContainer";
 import { Layout } from "../../components/Layout/Layout";
+import { Pagination } from "../../components/Pagination/Pagination";
 
 const PRODUCTS = [
     {
@@ -166,6 +167,7 @@ export const ProductsList = () => (
             <div>
                 <Breadcrumbs />
                 <Products products={PRODUCTS} headerText="Swetry"/>
+                <Pagination numberOfPages={5} />
             </div>
         </FlexContainer>
     </Layout>
