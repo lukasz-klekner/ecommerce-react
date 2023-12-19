@@ -8,6 +8,7 @@ import "./styles/global.css"
 import { MainPage } from './pages/MainPage/MainPage'
 import { Favourites } from './pages/Favourites/Favourites'
 import { Cart } from './pages/Cart/Cart'
+import { ProductsList } from './pages/ProductsList/ProductsList'
 
 
 const router = createBrowserRouter([
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
   {
     path: '/koszyk',
     element: <Cart />
-  }
+  },
+  {
+    path: '/lista-produktow',
+    element: <ProductsList />
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
