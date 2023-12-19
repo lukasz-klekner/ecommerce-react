@@ -1,4 +1,4 @@
-import { BestSellers } from "../../components/BestSellers/BestSellers";
+import { Products } from "../../components/Products/Products";
 import { Breadcrumbs } from "../../components/Breadcrumbs/Breadcrumbs";
 import { ExpandableMenu } from "../../components/ExpandableMenu/ExpandableMenu";
 import { FlexContainer } from "../../components/FlexContainer/FlexContainer";
@@ -165,7 +165,7 @@ export const ProductsList = () => (
             <ExpandableMenu />
             <div>
                 <Breadcrumbs />
-                <BestSellers products={PRODUCTS} headerText="Swetry"/>
+                <Products products={PRODUCTS} headerText="Swetry"/>
             </div>
         </FlexContainer>
     </Layout>

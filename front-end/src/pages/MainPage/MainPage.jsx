@@ -1,7 +1,7 @@
 import { Hero } from "../../components/Hero/Hero";
 import { Layout } from "../../components/Layout/Layout";
 import COVER_IMG from "../../assets/cover.jpeg"
-import { BestSellers } from "../../components/BestSellers/BestSellers";
+import { Products } from "../../components/Products/Products";
 
 const PRODUCTS = [
       {
@@ -77,6 +77,6 @@ const PRODUCTS = [
 export const MainPage = () => (
     <Layout>
         <Hero heroImgUrl={COVER_IMG} />
-        <BestSellers products={PRODUCTS} headerText="Sprawdź nasze bestellery" />
+        <Products products={PRODUCTS} headerText="Sprawdź nasze bestellery" />
     </Layout>
 )
