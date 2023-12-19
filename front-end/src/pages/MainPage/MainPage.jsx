@@ -4,7 +4,7 @@ import COVER_IMG from "../../assets/cover.jpeg"
 import { BestSellers } from "../../components/BestSellers/BestSellers";
 
 const PRODUCTS = [
-    {
+      {
         "id": 1,
         "gender": "men",
         "category": "odziez",
@@ -77,6 +77,6 @@ const PRODUCTS = [
 export const MainPage = () => (
     <Layout>
         <Hero heroImgUrl={COVER_IMG} />
-        <BestSellers products={PRODUCTS} />
+        <BestSellers products={PRODUCTS} headerText="Sprawdź nasze bestellery" />
     </Layout>
 )
