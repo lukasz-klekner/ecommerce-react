@@ -1,4 +1,5 @@
 import { Breadcrumbs } from "../../components/Breadcrumbs/Breadcrumbs";
+import { Details } from "../../components/Details/Details";
 import { ExpandableMenu } from "../../components/ExpandableMenu/ExpandableMenu";
 import { FlexContainer } from "../../components/FlexContainer/FlexContainer";
 import { Layout } from "../../components/Layout/Layout";
@@ -28,9 +29,12 @@ export const ProductDetails = () => (
     <Layout>
         <FlexContainer>
             <ExpandableMenu />
-            <div>
+            <div style={{ width: '100%'}}>
                 <Breadcrumbs />
-                <Photos product={PRODUCT} />
+                <FlexContainer>
+                    <Photos product={PRODUCT} />
+                    <Details product={PRODUCT} />
+                </FlexContainer>
             </div>
         </FlexContainer>
     </Layout>
