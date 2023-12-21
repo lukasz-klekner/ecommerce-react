@@ -5,12 +5,13 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import "./styles/theme.css"
 import "./styles/global.css"
 
-// import { MainPage } from './pages/MainPage/MainPage'
+import { MainPage } from './pages/MainPage/MainPage'
 import { Favourites } from './pages/Favourites/Favourites'
 import { Cart } from './pages/Cart/Cart'
 import { ProductsList } from './pages/ProductsList/ProductsList'
 import { ProductDetails } from './pages/ProductDetails/ProductDetails'
 import { Layout } from './components/Layout/Layout'
+import { mainPageLoader } from './api/mainPageLoader'
 
 
 const router = createBrowserRouter([
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
       {
         path: '/koszyk',
         element: <Cart />
+      },
+      {
+        path: '/:gender?',
+        element: <MainPage />,
+        loader: mainPageLoader,
       },
     ]
   },
