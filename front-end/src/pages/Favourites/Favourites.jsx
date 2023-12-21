@@ -1,5 +1,4 @@
 import { FavouritesList } from "../../components/FavouritesList/FavouritesList";
-import { Layout } from "../../components/Layout/Layout";
 
 const FAV_PRODUCTS = [
     {
@@ -39,7 +38,5 @@ const FAV_PRODUCTS = [
 ]
 
 export const Favourites = () => (
-    <Layout>
-        <FavouritesList products={FAV_PRODUCTS} />
-    </Layout>
+    <FavouritesList products={FAV_PRODUCTS} />
 )
