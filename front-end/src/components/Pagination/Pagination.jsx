@@ -8,7 +8,7 @@ export const Pagination = ({ numberOfPages }) => {
         <ul className={styles.pagination}>
             {PAGES.map(page => (
                 <li key={page}>
-                    <NavLink>{page}</NavLink>
+                    <NavLink to={`?page=${page}`}>{page}</NavLink>
                 </li>
             ))}
         </ul>
