@@ -8,16 +8,25 @@ import { CATEGORIES } from "../../constants/categories";
 
 export const ProductsList = () => {
     const products = useLoaderData()
-    const { category } = useParams()
+    const { category, subcategory } = useParams()
 
-    const foundCategory = CATEGORIES.find(({  path }) => path === category).categoryName
+    const foundCategory = CATEGORIES.find(({  path }) => path === category)
+
+    let foundSubcategory;
+
+    if(subcategory){
+        foundSubcategory = foundCategory.subcategories?.find(({ path }) => path === subcategory)
+    }
 
     return (
         <FlexContainer>
             <ExpandableMenu />
             <div>
                 <Breadcrumbs />
-                <Products products={products} headerText={foundCategory} />
+                <Products 
+                    products={products} 
+                    headerText={foundSubcategory ? foundSubcategory.categoryName : foundCategory.categoryName} 
+                />
                 <Pagination numberOfPages={5} />
             </div>
         </FlexContainer>
