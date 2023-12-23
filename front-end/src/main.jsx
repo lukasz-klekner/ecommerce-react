@@ -13,6 +13,7 @@ import { ProductDetails } from './pages/ProductDetails/ProductDetails'
 import { Layout } from './components/Layout/Layout'
 import { mainPageLoader } from './api/mainPageLoader'
 import { productsListLoader } from './api/productsListLoader'
+import { productLoader } from './api/productLoader'
 
 
 const router = createBrowserRouter([
@@ -38,11 +39,12 @@ const router = createBrowserRouter([
         element: <ProductsList />,   
         loader: productsListLoader,   
       },
+      {
+        path: '/:gender/:category/:subcategory/:productId',
+        element: <ProductDetails />,
+        loader: productLoader,  
+      },
     ]
-  },
-  {
-    path: '/szczegoly-produktu',
-    element: <ProductDetails />
   },
 ])
 
