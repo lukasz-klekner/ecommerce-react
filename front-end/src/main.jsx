@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     action: addProductToFavouritesAction,
   },
   {
-    path: ':productId',
+    path: '/delete-from-favorites/:productId',
     action: deleteFavouriteAction,
   },
   {
