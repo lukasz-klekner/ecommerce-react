@@ -15,6 +15,7 @@ import { mainPageLoader } from './api/mainPageLoader'
 import { productsListLoader } from './api/productsListLoader'
 import { productLoader } from './api/productLoader'
 import { addProductToFavouritesAction } from './api/addProductToFavouritesAction'
+import { favouritesLoader } from './api/favouritesLoader'
 
 
 const router = createBrowserRouter([
@@ -28,7 +29,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/ulubione',
-        element: <Favourites />
+        element: <Favourites />,
+        loader: favouritesLoader,
       },
       {
         path: '/koszyk',
