@@ -4,7 +4,7 @@ import { CURRENCIES } from "../constants/currencies";
 const CurrencyContext = createContext()
 
 export const CurrencyProvider = ({ children }) => {
-    const [currency, setCurrency] = useState(CURRENCIES.PLN)
+    const [currency, setCurrency] = useState(localStorage['selected_currency'] || CURRENCIES.PLN)
 
     return  (
         <CurrencyContext.Provider value={[currency, setCurrency]}>
