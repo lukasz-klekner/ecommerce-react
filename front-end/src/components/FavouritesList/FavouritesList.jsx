@@ -7,8 +7,8 @@ export const FavouritesList = ({ favourites }) => (
         <div className={styles.favouritesList}>
             <h2>Ulubione</h2>
             <div>
-                {favourites.map(({ product }) => (
-                    <FavouriteProduct key={product.id} product={product} />
+                {favourites.map(favourite => (
+                    <FavouriteProduct key={favourite.id} favourite={favourite} />
                 ))}
             </div>
         </div>
