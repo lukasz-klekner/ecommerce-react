@@ -1,6 +1,5 @@
 import { Link, useFetcher } from "react-router-dom";
-import { CURRENCIES, CURRENCY_SIGN } from "../../constants/currencies";
-import { useCurrency } from "../../contexts/CurrencyContext";
+import { Price } from "../Price/Price";
 import styles from "./Product.module.css"
 
 const ENDPOINT_TO_PATH_MAPPING = {
@@ -11,7 +10,6 @@ const ENDPOINT_TO_PATH_MAPPING = {
 
 export const Product = ({ product }) => {
     const { Form } = useFetcher()
-    const [ currency ] = useCurrency()
 
     return (
         <Link 
@@ -20,7 +18,9 @@ export const Product = ({ product }) => {
         >
             <img src={product.photos[0]}/>
             <h3>{product.productName}</h3>
-            <p>{currency === CURRENCIES.PLN ? product.pricePLN : product.priceUSD}{CURRENCY_SIGN[currency]}</p>
+            <p>
+                <Price product={product} />
+            </p>
             <Form
                 method="POST"
                 action={`/add-to-favorites/${product.id}`}
