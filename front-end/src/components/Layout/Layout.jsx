@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { CurrencyProvider } from "../../contexts/CurrencyContext";
 import { CategoryMenu } from "../CategoryMenu/CategoryMenu";
 import { CurrencySelector } from "../CurrencySelector/CurrencySelector";
 import { Footer } from "../Footer/Footer";
@@ -9,7 +10,7 @@ import { MainMenu } from "../MainMenu/MainMenu";
 import { TopBar } from "../TopBar/TopBar";
 
 export const Layout = () => (
-    <>
+    <CurrencyProvider>
         <MainContent>
             <TopBar>
                 <MainMenu />
@@ -23,5 +24,5 @@ export const Layout = () => (
             <Outlet />
         </MainContent>
         <Footer/>
-    </>
+    </CurrencyProvider>
 )
