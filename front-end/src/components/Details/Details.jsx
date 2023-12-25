@@ -3,8 +3,10 @@ import CAR_ICON from "../../assets/car.svg"
 import RETURN_ICON from "../../assets/return.svg"
 import { FullWidthButton } from "../FullWidthButton/FullWidthButton"
 import { Accordion } from "../Accordion/Accordion"
+import { useCartItems } from "../../contexts/CartItemsContext"
 
 export const Details = ({ product }) => {
+    const [, addProductToCart] = useCartItems()
     const ACCORDION_CONTENT = [
         {
             title: "Opis produktu",
@@ -22,7 +24,7 @@ export const Details = ({ product }) => {
             <p className={styles.productName}>{product.productName}</p>
             <p className={styles.price}>{product.pricePLN}zł</p>
 
-            <FullWidthButton isBlack>Dodaj do koszyka</FullWidthButton>
+            <FullWidthButton isBlack onClick={() => addProductToCart(product)}>Dodaj do koszyka</FullWidthButton>
 
             <ul className={styles.extraInfo}>
                 <li>

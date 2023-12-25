@@ -3,9 +3,11 @@ import REMOVE_ICON from "../../assets/remove.svg"
 import BAG_ICON from "../../assets/bag.svg"
 import { useFetcher } from "react-router-dom"
 import { Price } from "../Price/Price"
+import { useCartItems } from "../../contexts/CartItemsContext"
 
 export const FavouriteProduct = ({ favourite }) => {
     const { Form } = useFetcher()
+    const [, addProductToCart] = useCartItems()
     const price = <Price product={favourite.product} />
 
     return (
@@ -32,7 +34,7 @@ export const FavouriteProduct = ({ favourite }) => {
                             Usuń
                         </button>
                     </Form>
-                    <button>
+                    <button onClick={() => addProductToCart(favourite.product)}>
                         <img src={BAG_ICON} />
                         Dodaj do koszyka
                     </button>
