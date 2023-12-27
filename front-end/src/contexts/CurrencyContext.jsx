@@ -1,10 +1,11 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
 import { CURRENCIES } from "../constants/currencies";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const CurrencyContext = createContext()
 
 export const CurrencyProvider = ({ children }) => {
-    const [currency, setCurrency] = useState(localStorage['selected_currency'] || CURRENCIES.PLN)
+    const [currency, setCurrency] = useLocalStorage('selected_currency', CURRENCIES.PLN)
 
     return  (
         <CurrencyContext.Provider value={[currency, setCurrency]}>

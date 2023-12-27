@@ -4,14 +4,13 @@ import { useCurrency } from "../../contexts/CurrencyContext";
 
 export const CurrencySelector = () => {
     const [currency, setCurrency] = useCurrency()
-    
+
     return (
         <select
             className={styles.currencySelector}
             value={currency}
             onChange={(event) => {
                 setCurrency(event.target.value)
-                localStorage['selected_currency'] = event.target.value
             }}
         >
             <option value={CURRENCIES.PLN}>{CURRENCIES.PLN}</option>

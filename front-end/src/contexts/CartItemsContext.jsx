@@ -1,18 +1,16 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { createContext } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const CartItemsContext = createContext([])
 
 export const CartItemsProvider = ({ children }) => {
-    const [cartItems, setCartItems] = useState(() => {
-        return JSON.parse(localStorage['cart_products']) || []
-    })
+    const [cartItems, setCartItems] = useLocalStorage('cart_products', [])
 
-    const addProductToCart = (product) =>  setCartItems(prevState => {
-        const newState = [...prevState, product]
-        localStorage['cart_products'] = JSON.stringify(newState)
-        return newState
-    } )
+    const addProductToCart = (product) => {
+        const newState = [...cartItems, product]
+        setCartItems(newState)
+    }
 
     return (
         <CartItemsContext.Provider value={[cartItems, addProductToCart]}>
